@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" type="text/css" href="Project1/css/project1.css">  -->
+</head>
+<style>
+#page {
+  border: 1px solid #949599; 
+  height: 500px;
+  margin: 20px;
+  padding: 20px;
+  width: 1250px;
+  background-color:whitesmoke
+}
+
+#header {
+  /* border: 6px solid #949599; */
+  height: 100px;
+  margin: 20px;
+  padding: 20px;
+  width: 1000px;
+  background-color:coral
+}
+#app-title { 
+  color:white;
+  font-size: 50px;
+  font-weight: bold;
+  text-align:center;
+  margin: -16px -16px 16px -16px;
+/* margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
+/* margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) */
+}
+.signup {
+    background-color: rgb(236, 13, 5); 
+    height:50px;
+    width:80px;
+}
+.login {
+    background-color: rgb(236, 13, 5); 
+    height:50px;
+    width:80px;
+}
+.form-style-1 {
+	margin:10px auto;
+	max-width: 400px;
+	padding: 20px 12px 10px 20px;
+    font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+
+
+</style>  
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<body>
+    <div id="page">
+       <div id="header">
+           <h2 id="app-title">CodeBook</h2>
+        </div>
+        <div id="entry">
+          <button class="signup" >Sign-Up</button> <span><button class="login">Log In</button></span>
+        </div>   
+    </div>
+    <script> 
+     $(".signup").on("click", function() {
+      window.location= "sign_in.html";
+      console.log("button clicked: ");    
+      });
+
+      $(".login").on("click", function() {
+      window.location= "log_in.html";
+      console.log("button clicked: ");    
+      }); 
+    </script>
+</body>
+</html>
