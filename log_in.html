@@ -9,10 +9,23 @@
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 </head>
 <style>
+<<<<<<< HEAD
     .back {
         background-color: rgb(236, 13, 5);
         height: 50px;
         width: 80px;
+=======
+    .back-button {
+    background-color: rgb(236, 13, 5); 
+    height:50px;
+    width:80px;
+    }
+
+    .logout {
+    background-color: rgb(236, 13, 5); 
+    height:50px;
+    width:80px;
+>>>>>>> master
     }
 
     #page {
@@ -44,6 +57,7 @@
 
 <body>
     <div id="page">
+<<<<<<< HEAD
         <div id="header">
             <h2 id=app-title>LogIn</h2>
         </div>
@@ -66,6 +80,42 @@
         <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
 
         <script src="assets/javascript/login.js"></script>
+=======
+            <div id="header">
+                <h2 id=app-title>LogIn</h2>
+            </div>
+
+            <form id="contact-form">
+                    <ul>
+                      <li>          
+                        <label for="email">Email</label>
+                        <input type="email" id="email-input-login" name="email" placeholder="example@gmail.com" required="required">
+                      </li>
+                      <li>
+                        <label for="name">Password</label>
+                        <input type="text" id="password-input-login" name="name" required="required">
+                      </li>
+                      
+                    </ul>
+                        <input type="submit">
+            </form>
+
+            <div id="entry">
+                 <button class="back-button" >Back</button> <span><button class="logout">Log Out</button></span>
+            </div>    
+        </div><br><br>
+   
+   
+    <div id="entry">
+        <button class="back">Back To Entry Screen</button> 
+     </div>
+    <script>
+        $(".back-button").on("click", function() {
+        window.location= "project1.html";
+        console.log("button clicked: ");    
+        });
+    </script>
+>>>>>>> master
 </body>
 
 </html>

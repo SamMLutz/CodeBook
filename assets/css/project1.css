@@ -1,0 +1,58 @@
+
+#page {
+  border: 1px solid #949599; 
+  height: 650px;
+  margin: 20px;
+  padding: 20px;
+  width: 1250px;
+  background-color:whitesmoke
+}
+
+#header {
+  /* border: 6px solid #949599; */
+  height: 100px;
+  margin: 20px;
+  padding: 20px;
+  width: 1000px;
+  background-color:coral
+}
+#app-title { 
+  color:white;
+  font-size: 50px;
+  font-weight: bold;
+  text-align:center;
+  margin: -16px -16px 16px -16px;
+
+}
+.signup {
+    background-color: rgb(236, 13, 5); 
+    height:50px;
+    width:80px;
+}
+.login {
+    background-color: rgb(236, 13, 5); 
+    height:50px;
+    width:80px;
+}
+.form-style-1 {
+	margin:10px auto;
+	max-width: 400px;
+	padding: 20px 12px 10px 20px;
+    font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.back {
+    background-color: rgb(236, 13, 5); 
+    height:50px;
+    width:80px;
+}
+.back-button {
+    background-color: rgb(236, 13, 5); 
+    height:50px;
+    width:80px;
+}
+.logout {
+    background-color: rgb(236, 13, 5); 
+    height:50px;
+    width:80px;
+}
