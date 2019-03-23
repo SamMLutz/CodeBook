@@ -7,7 +7,13 @@
     <title>Document</title>
 </head>
 <style>
-    .back {
+    .back-button {
+    background-color: rgb(236, 13, 5); 
+    height:50px;
+    width:80px;
+    }
+
+    .logout {
     background-color: rgb(236, 13, 5); 
     height:50px;
     width:80px;
@@ -43,16 +49,33 @@
             <div id="header">
                 <h2 id=app-title>LogIn</h2>
             </div>
-            <p>This page will have input for authentication- email, password</p> 
-           <p>After authentication, profile info displayed, spotify api to add a song to page</p>
-            <p>inspirational quote (api)</p>
-             <p>OR authenication failed displayed to user</p>
+
+            <form id="contact-form">
+                    <ul>
+                      <li>          
+                        <label for="email">Email</label>
+                        <input type="email" id="email-input-login" name="email" placeholder="example@gmail.com" required="required">
+                      </li>
+                      <li>
+                        <label for="name">Password</label>
+                        <input type="text" id="password-input-login" name="name" required="required">
+                      </li>
+                      
+                    </ul>
+                        <input type="submit">
+            </form>
+
+            <div id="entry">
+                 <button class="back-button" >Back</button> <span><button class="logout">Log Out</button></span>
+            </div>    
+        </div><br><br>
+   
    
     <div id="entry">
         <button class="back">Back To Entry Screen</button> 
      </div>
     <script>
-        $(".back").on("click", function() {
+        $(".back-button").on("click", function() {
         window.location= "project1.html";
         console.log("button clicked: ");    
         });
