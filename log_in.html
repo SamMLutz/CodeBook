@@ -1,61 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>LogIn</title>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 </head>
 <style>
     .back {
-    background-color: rgb(236, 13, 5); 
-    height:50px;
-    width:80px;
+        background-color: rgb(236, 13, 5);
+        height: 50px;
+        width: 80px;
     }
+
     #page {
-          border: 1px solid #949599; 
-          height: 600px;
-          margin: 20px;
-          padding: 20px;
-          width: 1250px;
-          background-color:whitesmoke
-        }
-        
-        #header {
-          /* border: 6px solid #949599; */
-          height: 100px;
-          margin: 20px;
-          padding: 20px;
-          width: 1000px;
-          background-color:coral
-        }
-        #app-title { 
-        color:white;
+        border: 1px solid #949599;
+        height: 600px;
+        margin: 20px;
+        padding: 20px;
+        width: 1250px;
+        background-color: whitesmoke
+    }
+
+    #header {
+        /* border: 6px solid #949599; */
+        height: 100px;
+        margin: 20px;
+        padding: 20px;
+        width: 1000px;
+        background-color: coral
+    }
+
+    #app-title {
+        color: white;
         font-size: 50px;
         font-weight: bold;
-        text-align:center;
+        text-align: center;
         margin: -16px -16px 16px -16px;
-        }
-    </style>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    }
+</style>
+
 <body>
     <div id="page">
-            <div id="header">
-                <h2 id=app-title>LogIn</h2>
-            </div>
-            <p>This page will have input for authentication- email, password</p> 
-           <p>After authentication, profile info displayed, spotify api to add a song to page</p>
-            <p>inspirational quote (api)</p>
-             <p>OR authenication failed displayed to user</p>
-   
-    <div id="entry">
-        <button class="back">Back To Entry Screen</button> 
-     </div>
-    <script>
-        $(".back").on("click", function() {
-        window.location= "project1.html";
-        console.log("button clicked: ");    
-        });
-    </script>
+        <div id="header">
+            <h2 id=app-title>LogIn</h2>
+        </div>
+
+        <div id="firebaseui-auth-container"></div>
+
+        <div id="loader">Loading...</div>
+
+        <div id="entry">
+            <button class="back">Back To Entry Screen</button>
+        </div>
+
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+
+        <script src="assets/javascript/login.js"></script>
 </body>
+
 </html>
