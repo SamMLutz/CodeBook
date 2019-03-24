@@ -17,16 +17,6 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
 var uiConfig = {
     callbacks: {
-        // signInSuccessWithAuthResult: function (authResult, redirectUrl) {
-        //     // User successfully signed in.
-        //     // Return type determines whether we continue the redirect automatically
-        //     // or whether we leave that to developer to handle.
-        //     console.log("number1");
-        //     var user = firebase.auth().currentUser;
-        //     console.log(user);
-
-        //     return true;
-        // },
         uiShown: function () {
             // The widget is rendered.
             // Hide the loader.
