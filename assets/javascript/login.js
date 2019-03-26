@@ -14,6 +14,8 @@ var config = {
 firebase.initializeApp(config);
 
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
+console.log(firebase.auth());
+console.log(ui);
 
 var uiConfig = {
     callbacks: {

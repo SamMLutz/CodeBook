@@ -71,6 +71,22 @@ $(document).ready(function () {
 
     };
 
+    function addDivforChatandThenInitChat(userobject){
+        var chatDiv = $("<div>");
+        chatDiv.attr("id","firechat-wrapper");
+        $("#page").append(chatDiv);
+
+        // Get a Firebase Database ref
+        var chatRef = firebase.database().ref("chat");
+
+        // Create a Firechat instance
+        var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
+
+        // Set the Firechat user
+        chat.setUser(userobject.uid, userobject.displayName);
+      
+    };
+
 
 
     firebase.auth().onAuthStateChanged(function (user) {
@@ -78,6 +94,7 @@ $(document).ready(function () {
             console.log(user);
             // User is signed in.
             storeInDBandDisplay(user);
+            addDivforChatandThenInitChat(user);
 
             // ...
         } else {
