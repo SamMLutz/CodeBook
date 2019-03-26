@@ -31,6 +31,8 @@ $(document).ready(function () {
         var uid = userobject.uid;
         // var providerData = user.providerData;
 
+        database.ref("/users/"+uid).onDisconnect().remove();
+
         database.ref("/users").update({
 
             [uid]:
@@ -80,7 +82,7 @@ $(document).ready(function () {
         var chatRef = firebase.database().ref("chat");
 
         // Create a Firechat instance
-        var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
+        var chat = new FirechatUI(chatRef, $("#firechat-wrapper"));
 
         // Set the Firechat user
         chat.setUser(userobject.uid, userobject.displayName);
