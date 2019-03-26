@@ -10,23 +10,29 @@ $.ajax({
   url: weatherQueryURL,
   method: "GET"
 }).then(function(response){
-    console.log(response);
-    console.log("temperature high: " + response.main.temp_max);
-    console.log("Temperatur low: " + response.main.temp_min);
-    console.log("Humidity: " + response.main.humidity);
-    console.log("Clouds: " + JSON.stringify(response.clouds) + "%");
+    // console.log(response);
+    // console.log("temperature high: " + response.main.temp_max);
+    // console.log("Temperatur low: " + response.main.temp_min);
+    // console.log("Humidity: " + response.main.humidity);
+    // console.log("Clouds: " + JSON.stringify(response.clouds) + "%");
 });
 
 
 // api for hackernews
+ var apiKey = "e70885d240c04b85a2d289219f0c346b"
 
-var newsQueryURL = "https://hacker-news.firebaseio.com/v0/topstories"
+ var searchRequest 
 
+var newsQueryURL = "https://newsapi.org/v2/top-headlines?sources=hacker-news&apiKey=" + apiKey
 $.ajax({
     url: newsQueryURL,
     method: "GET"
   }).then(function(response){
       console.log(response);
+      console.log(response.articles[1].author);
+      console.log(response.articles[1].title);
+      console.log(response.articles[1].description);
+      console.log(response.articles[1].url);
      
   });
 
