@@ -21,7 +21,10 @@ $.ajax({
 // api for hackernews
  var apiKey = "e70885d240c04b85a2d289219f0c346b"
 
- var searchRequest 
+//  var searchRequest = $("#search-request").val().trim();
+
+
+
 
 var newsQueryURL = "https://newsapi.org/v2/top-headlines?sources=hacker-news&apiKey=" + apiKey
 $.ajax({
@@ -35,4 +38,14 @@ $.ajax({
       console.log(response.articles[1].url);
      
   });
+ 
+  var searchRequest = "programming with javascript"
+  var newsQueryURL =  "https://newsapi.org/v2/everything?q=" + searchRequest + "&apiKey=" + apiKey
 
+$.ajax({
+    url: newsQueryURL,
+    method: "GET"
+  }).then(function(response){
+     console.log(response, response.articles[1]);
+     
+  });
