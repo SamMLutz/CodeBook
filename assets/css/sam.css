@@ -13,3 +13,11 @@ h1 {
 .footer-content {
     text-align: center;
 }
+
+#hacker-headlines {
+    overflow: auto;
+}
+
+#searchDiv {
+    overflow: auto;
+}
