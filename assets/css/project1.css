@@ -56,3 +56,23 @@
     height:50px;
     width:80px;
 }
+
+h1 {
+  text-align: center;
+}
+
+.footer-copyright {
+  text-align: center;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+#hacker-headlines {
+  overflow: auto;
+}
+
+#searchDiv {
+  overflow: auto;
+}
