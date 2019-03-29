@@ -31,6 +31,8 @@ $(document).ready(function () {
         var uid = userobject.uid;
         // var providerData = user.providerData;
 
+        database.ref("/users/"+uid).onDisconnect().remove();
+
         database.ref("/users").update({
 
             [uid]:
@@ -65,10 +67,27 @@ $(document).ready(function () {
             pictureDiv.append(img);
             userInformationDiv.append(pname).append(pemail1).append(pemail2);
 
-            $("#page").append(pictureDiv).append(userInformationDiv);
+            $("#display-image").append(pictureDiv)
+            $("#display-info").append(userInformationDiv);
 
         });
 
+    };
+
+    function addDivforChatandThenInitChat(userobject){
+        var chatDiv = $("<div>");
+        chatDiv.attr("id","firechat-wrapper");
+        $("#dislay-chat").append(chatDiv);
+
+        // Get a Firebase Database ref
+        var chatRef = firebase.database().ref("chat");
+
+        // Create a Firechat instance
+        var chat = new FirechatUI(chatRef, $("#firechat-wrapper"));
+
+        // Set the Firechat user
+        chat.setUser(userobject.uid, userobject.displayName);
+      
     };
 
 
@@ -78,6 +97,7 @@ $(document).ready(function () {
             console.log(user);
             // User is signed in.
             storeInDBandDisplay(user);
+            addDivforChatandThenInitChat(user);
 
             // ...
         } else {

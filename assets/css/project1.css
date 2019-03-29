@@ -1,4 +1,4 @@
-
+/* 
 #page {
   border: 1px solid #949599; 
   height: 650px;
@@ -9,7 +9,7 @@
 }
 
 #header {
-  /* border: 6px solid #949599; */
+  border: 6px solid #949599;
   height: 100px;
   margin: 20px;
   padding: 20px;
@@ -75,4 +75,9 @@ h1 {
 
 #searchDiv {
   overflow: auto;
+} 
+*/
+
+#firechat .firechat-dropdown-toggle.btn {
+  padding:0px;
 }
