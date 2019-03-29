@@ -67,7 +67,8 @@ $(document).ready(function () {
             pictureDiv.append(img);
             userInformationDiv.append(pname).append(pemail1).append(pemail2);
 
-            $("#page").append(pictureDiv).append(userInformationDiv);
+            $("#display-image").append(pictureDiv)
+            $("#display-info").append(userInformationDiv);
 
         });
 
@@ -76,7 +77,7 @@ $(document).ready(function () {
     function addDivforChatandThenInitChat(userobject){
         var chatDiv = $("<div>");
         chatDiv.attr("id","firechat-wrapper");
-        $("#page").append(chatDiv);
+        $("#dislay-chat").append(chatDiv);
 
         // Get a Firebase Database ref
         var chatRef = firebase.database().ref("chat");

@@ -1,4 +1,4 @@
-
+/* 
 #page {
   border: 1px solid #949599; 
   height: 650px;
@@ -9,7 +9,7 @@
 }
 
 #header {
-  /* border: 6px solid #949599; */
+  border: 6px solid #949599;
   height: 100px;
   margin: 20px;
   padding: 20px;
@@ -55,4 +55,9 @@
     background-color: rgb(236, 13, 5); 
     height:50px;
     width:80px;
+} 
+*/
+
+#firechat .firechat-dropdown-toggle.btn {
+  padding:0px;
 }
