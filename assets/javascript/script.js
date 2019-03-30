@@ -23,9 +23,12 @@ $.ajax({
     
     var headlineLink = $("<a href=" + articleUrl + "></a>").text("Check it out!")
 
+    // var articleSpace = $("<p>").text("-");
+
     headlineLink.attr("target", "#");
 
-    var articleTitle = $("<p>").text("Title: " + response.articles[i].title);
+    var articleTitle = $("<p>").text(response.articles[i].title);
+    articleTitle.addClass("article-title");
 
     $("#hacker-headlines").append(articleTitle, articleAuthor, headlineLink);
   }
@@ -54,10 +57,13 @@ $("#submit-button").on("click", function (event) {
 
       var headlineLink = $("<a href=" + articleUrl + "></a>").text("Check it out!")
 
+      var articleSpace = $("<p>").text("-");
+
       headlineLink.attr("target", "#");
 
-      var articleTitle = $("<p>").text("Title: " + response.articles[i].title);
-      $("#results").append(articleTitle, articleAuthor, headlineLink)
+      var articleTitle = $("<p>").text(response.articles[i].title);
+     
+      $("#results").append(articleTitle, articleAuthor, headlineLink, articleSpace)
 
       console.log(response.articles[i].title);
       console.log(response.articles[i].url);

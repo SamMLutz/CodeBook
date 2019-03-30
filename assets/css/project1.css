@@ -110,9 +110,13 @@ h4 {
 
 h2 {
   font-family: 'Noto Serif', serif;
+  text-align: center;
 }
 
 #results {
   margin-top: 5%;
 }
 
+.article-title {
+  font-weight: bold;
+}
