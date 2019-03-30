@@ -120,3 +120,7 @@ h2 {
 .article-title {
   font-weight: bold;
 }
+
+.profile-pic {
+  height: 200px;
+}
