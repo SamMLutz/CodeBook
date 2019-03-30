@@ -88,12 +88,12 @@ h1 {
   padding-bottom: 28px;
 }
 
-.container {
+/* .container {
   width: 85%;
-}
+} */
 
 body { 
-  background: url("/Users/SamLutz/bc/Project_1/assets/images/pexels-photo-1939485.jpeg") no-repeat center center fixed; 
+  background: url("../images/light-blue-abstract-background.jpg") no-repeat center center fixed; 
  -webkit-background-size: cover;
  -moz-background-size: cover;
  -o-background-size: cover;
@@ -123,4 +123,9 @@ h2 {
 
 .profile-pic {
   height: 200px;
+}
+
+#firechat .btn:first-child {
+ 
+  height: 40px;
 }

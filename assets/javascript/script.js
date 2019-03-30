@@ -58,7 +58,7 @@ $("#submit-button").on("click", function (event) {
 
       var headlineLink = $("<a href=" + articleUrl + "></a>").text("Check it out!")
 
-      var articleSpace = $("<p>").text("-");
+      // var articleSpace = $("<p>").text("-");
 
       headlineLink.attr("target", "#");
 
@@ -66,7 +66,7 @@ $("#submit-button").on("click", function (event) {
 
       articleTitle.addClass("article-title");
      
-      $("#results").append(articleTitle, articleAuthor, headlineLink, articleSpace)
+      $("#results").append(articleTitle, articleAuthor, headlineLink)
        
       
       console.log(response.articles[i].title);
