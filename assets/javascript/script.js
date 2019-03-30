@@ -28,6 +28,7 @@ $.ajax({
     headlineLink.attr("target", "#");
 
     var articleTitle = $("<p>").text(response.articles[i].title);
+   
     articleTitle.addClass("article-title");
 
     $("#hacker-headlines").append(articleTitle, articleAuthor, headlineLink);
@@ -62,9 +63,12 @@ $("#submit-button").on("click", function (event) {
       headlineLink.attr("target", "#");
 
       var articleTitle = $("<p>").text(response.articles[i].title);
+
+      articleTitle.addClass("article-title");
      
       $("#results").append(articleTitle, articleAuthor, headlineLink, articleSpace)
-
+       
+      
       console.log(response.articles[i].title);
       console.log(response.articles[i].url);
     }
