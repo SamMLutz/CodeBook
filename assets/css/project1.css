@@ -70,6 +70,7 @@ h1 {
 }
 
 #hacker-headlines {
+  height: 10%;
   overflow: auto;
 }
 
