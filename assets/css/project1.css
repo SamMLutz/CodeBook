@@ -82,3 +82,20 @@ h1 {
 #firechat .firechat-dropdown-toggle.btn {
   padding:0px;
 }
+
+#firechat .firechat-dropdown-toggle.btn {
+  padding: 0px;
+  padding-bottom: 28px;
+}
+
+.container {
+  width: 85%;
+}
+
+body { 
+  background: url("/Users/SamLutz/bc/Project_1/assets/images/pexels-photo-1939485.jpeg") no-repeat center center fixed; 
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+}

@@ -12,19 +12,22 @@ $.ajax({
   for (i = 0; i < 5; i++) {
     // console log the response
     console.log(response);
-    // console.log(response.articles[i].author);
+    console.log(response.articles[i].author);
     console.log(response.articles[i].title);
     // console.log(response.articles[i].description);
     console.log(response.articles[i].url);
 
+    var articleAuthor = $("<p>").text("Author: " + response.articles[i].author);
+
     var articleUrl = response.articles[i].url
     
-    var headlineLink = $("<a href=" + articleUrl + "></a>").text(response.articles[i].url)
+    var headlineLink = $("<a href=" + articleUrl + "></a>").text("Check it out!")
 
     headlineLink.attr("target", "#");
 
     var articleTitle = $("<p>").text("Title: " + response.articles[i].title);
-    $("#hacker-headlines").append(articleTitle, headlineLink)
+
+    $("#hacker-headlines").append(articleTitle, articleAuthor, headlineLink);
   }
 });
 
@@ -45,16 +48,16 @@ $("#submit-button").on("click", function (event) {
     
     console.log(response, response.articles[1].title);
     for (i = 0; i < 5; i++) {
-      
+      var articleAuthor = $("<p>").text("Author: " + response.articles[i].author);
       
       var articleUrl = response.articles[i].url;
 
-      var headlineLink = $("<a href=" + articleUrl + "></a>").text(response.articles[i].url)
+      var headlineLink = $("<a href=" + articleUrl + "></a>").text("Check it out")
 
       headlineLink.attr("target", "#");
 
       var articleTitle = $("<p>").text("Title: " + response.articles[i].title);
-      $("#results").append(articleTitle, headlineLink)
+      $("#results").append(articleTitle, articleAuthor, headlineLink)
 
       console.log(response.articles[i].title);
       console.log(response.articles[i].url);
