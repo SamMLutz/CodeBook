@@ -70,6 +70,7 @@ h1 {
 }
 
 #hacker-headlines {
+  height: 10%;
   overflow: auto;
 }
 
@@ -80,4 +81,51 @@ h1 {
 
 #firechat .firechat-dropdown-toggle.btn {
   padding:0px;
+}
+
+#firechat .firechat-dropdown-toggle.btn {
+  padding: 0px;
+  padding-bottom: 28px;
+}
+
+/* .container {
+  width: 85%;
+} */
+
+body { 
+  background: url("../images/light-blue-abstract-background.jpg") no-repeat center center fixed; 
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+}
+
+.brand-logo {
+  font-family: 'Lobster', cursive;
+}
+
+h4 {
+  font-family: 'ZCOOL XiaoWei', serif;
+}
+
+h2 {
+  font-family: 'Noto Serif', serif;
+  text-align: center;
+}
+
+#results {
+  margin-top: 5%;
+}
+
+.article-title {
+  font-weight: bold;
+}
+
+.profile-pic {
+  height: 200px;
+}
+
+#firechat .btn:first-child {
+ 
+  height: 40px;
 }
