@@ -99,3 +99,15 @@ body {
  -o-background-size: cover;
  background-size: cover;
 }
+
+.brand-logo {
+  font-family: 'Lobster', cursive;
+}
+
+h4 {
+  font-family: 'ZCOOL XiaoWei', serif;
+}
+
+h2 {
+  font-family: 'Noto Serif', serif;
+}

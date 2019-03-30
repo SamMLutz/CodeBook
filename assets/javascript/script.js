@@ -52,7 +52,7 @@ $("#submit-button").on("click", function (event) {
       
       var articleUrl = response.articles[i].url;
 
-      var headlineLink = $("<a href=" + articleUrl + "></a>").text("Check it out")
+      var headlineLink = $("<a href=" + articleUrl + "></a>").text("Check it out!")
 
       headlineLink.attr("target", "#");
 
