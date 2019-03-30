@@ -1,0 +1,15 @@
+.background-banner{
+      
+        background: url("../images/light-blue-abstract-background.jpg")
+        no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+                -o-background-size: cover;
+        background-size: cover;
+    }
+    .firebaseui-textfield.mdl-textfield .firebaseui-label::after {
+        background-color: white;
+    }
+    .mdl-textfield__label:after {
+        background-color: white;
+    }

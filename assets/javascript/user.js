@@ -108,7 +108,7 @@ $(document).ready(function () {
             userInformationDiv.append(pname).append(pemail1).append(pemail2);
 
             $("#display-image").append(pictureDiv)
-            $("#display-info").append(userInformationDiv);
+            $(".user-info").append(userInformationDiv);
 
         });
 
