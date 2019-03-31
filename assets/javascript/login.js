@@ -1,8 +1,3 @@
-$(".back-button").on("click", function () {
-    window.location = "project1.html";
-    console.log("button clicked: ");
-});
-
 var config = {
     apiKey: "AIzaSyCv8Qv88n2ge3Q8VvqG1ekBjbNDp9jkDLc",
     authDomain: "codebook-6130b.firebaseapp.com",

@@ -5,78 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>LogIn</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/log_in.css">
 </head>
-<style>
-    .back {
-        background-color: rgb(236, 13, 5);
-        height: 50px;
-        width: 80px;}
-        
-    .back-button {
-    background-color: rgb(236, 13, 5); 
-    height:50px;
-    width:80px;
-    }
 
-    .logout {
-    background-color: rgb(236, 13, 5); 
-    height:50px;
-    width:80px;
-    }
 
-    #page {
-        border: 1px solid #949599;
-        height: 600px;
-        margin: 20px;
-        padding: 20px;
-        width: 1250px;
-        background-color: whitesmoke
-    }
-
-    #header {
-        /* border: 6px solid #949599; */
-        height: 100px;
-        margin: 20px;
-        padding: 20px;
-        width: 1000px;
-        background-color: coral
-    }
-
-    #app-title {
-        color: white;
-        font-size: 50px;
-        font-weight: bold;
-        text-align: center;
-        margin: -16px -16px 16px -16px;
-    }
-</style>
-
-<body>
-    <div id="page">
-        <div id="header">
-            <h2 id=app-title>LogIn</h2>
-        </div>
-
-        <div id="firebaseui-auth-container"></div>
-
+<body class="background-banner">
+    <div class="container">
+        <header>
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#!" class="brand-logo">Welcome to CodeBook!</a>
+                    <ul class="right hide-on-med-and-down">
+                    </ul>
+                </div>
+            </nav>
+        </header><br><br><br>
         <div id="loader">Loading...</div>
+        <div id="firebaseui-auth-container"></div>
+        <!-- <i class = "material-icons tiny">cloud</i> -->
 
-        <div id="entry">
+    </div>
+
+    <!-- <div id="entry">
             <button class="back">Back To Entry Screen</button>
-        </div>
+        </div> -->
 
 
 
-        <script src="https://code.jquery.com/jquery-3.3.1.js"
-            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
-        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
 
-        <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
 
-        <script src="assets/javascript/login.js"></script>
+    <script src="assets/javascript/login.js"></script>
 </body>
 
 </html>
