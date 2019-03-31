@@ -24,7 +24,7 @@ $(document).ready(function () {
     var database = firebase.database();
     var storage = firebase.storage();
 
-
+    var count = 0;
 
 
 
@@ -38,11 +38,11 @@ $(document).ready(function () {
         var uid = userobject.uid;
         // var providerData = user.providerData;
 
-        // useStrorage(userobject);
+        
 
         var selectedFile;
         var filename;
-        var fileref;
+        
 
         var emailStorageRef = storage.ref(email);
 
@@ -62,6 +62,7 @@ $(document).ready(function () {
                    
                     console.log(url);
                     photoURL=url;
+                    count++;
                     database.ref("/users/"+uid+"/photoURL").set(photoURL);
                   }).catch(function(error) {
                     // Handle any errors
@@ -87,27 +88,34 @@ $(document).ready(function () {
 
         database.ref("/users/" + uid).on("value", function (snapshot) {
 
-            var pictureDiv = $("<div>");
-            pictureDiv.attr("id", "img-id");
+            // var pictureDiv = $("<div>");
+            // pictureDiv.attr("id", "img-id");
+            if (count>0){
+            var img = $(".profile-pic");
+            img.attr("src", snapshot.val().photoURL);
+            }
+
+            $("#image-title").text("Hacker " + snapshot.val().displayName);
 
             var userInformationDiv = $("<div>");
             userInformationDiv.attr("id", "contact-info");
 
-            var img = $("<img>");
+            
             var pname = $("<p>");
             var pemail1 = $("<p>");
             var pemail2 = $("<p>");
 
-            img.attr("src", snapshot.val().photoURL).attr("class","responsive-img");
+            
 
             pname.text("Welcome " + snapshot.val().displayName + "!");
             pemail1.text("Email:");
             pemail2.text(snapshot.val().email);
 
-            pictureDiv.append(img);
+            // pictureDiv.append(img);
             userInformationDiv.append(pname).append(pemail1).append(pemail2);
 
-            $("#display-image").append(pictureDiv)
+            // $("#display-image").append(pictureDiv)
+            $(".user-info").empty();
             $(".user-info").append(userInformationDiv);
 
         });
