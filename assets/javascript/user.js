@@ -1,15 +1,5 @@
 $(document).ready(function () {
 
-    $(".signup").on("click", function () {
-        window.location = "sign_in.html";
-        console.log("button clicked: ");
-    });
-
-    $(".login").on("click", function () {
-        window.location = "log_in.html";
-        console.log("button clicked: ");
-    });
-
     var config = {
         apiKey: "AIzaSyCv8Qv88n2ge3Q8VvqG1ekBjbNDp9jkDLc",
         authDomain: "codebook-6130b.firebaseapp.com",
@@ -20,18 +10,63 @@ $(document).ready(function () {
     };
     firebase.initializeApp(config);
     var database = firebase.database();
+    var storage = firebase.storage();
+
+
+
+
 
 
     function storeInDBandDisplay(userobject) {
         var displayName = userobject.displayName;
         var email = userobject.email;
         // var emailVerified = user.emailVerified;
-        var photoURL = userobject.photoURL;
+        var photoURL = '';
         // var isAnonymous = user.isAnonymous;
         var uid = userobject.uid;
         // var providerData = user.providerData;
 
-        database.ref("/users/"+uid).onDisconnect().remove();
+
+
+        var selectedFile;
+        var filename;
+
+
+        var emailStorageRef = storage.ref(email);
+        // console.log("this is the email storage ref: "+emailStorageRef);
+        // var stringEmailStorageRef = String(emailStorageRef);
+
+        // var getEmailFromStorageRef = stringEmailStorageRef.slice(32);
+        // console.log(" here is the slice: "+getEmailFromStorageRef);
+
+        $("#file-select").on("change", handleFileUploadChange)
+
+        function handleFileUploadChange(event) {
+            selectedFile = event.target.files[0];
+            // console.log(selectedFile);
+            // console.log(userobject);
+            filename = selectedFile.name;
+            console.log(filename);
+
+
+            emailStorageRef.put(selectedFile).then(function (snapshot) {
+
+                emailStorageRef.getDownloadURL().then(function (url) {
+
+                    // console.log("yo yoyoyoyoyoyo this is the url"+url);
+                    photoURL = url;
+
+                    database.ref("/users/" + uid + "/photoURL").set(photoURL);
+                }).catch(function (error) {
+                    // Handle any errors
+                    // console.log("it entered the catch in the promise!");
+                });
+            });
+        }
+
+
+
+        database.ref("/users/" + uid).onDisconnect().remove();
 
         database.ref("/users").update({
 
@@ -45,38 +80,58 @@ $(document).ready(function () {
             }
         });
 
-        database.ref("/users/"+uid).on("value",function(snapshot){
+        database.ref("/users/" + uid).on("value", function (snapshot) {
 
-            var pictureDiv = $("<div>");
-            pictureDiv.attr("id","img-id");
+            // var pictureDiv = $("<div>");
+            // pictureDiv.attr("id", "img-id");
+            var img = $(".profile-pic");
+
+            // persist profile picture
+            emailStorageRef.getDownloadURL().then(function (url) {
+
+                // console.log("yo yoyoyoyoyoyo this is the url"+url);
+                photoURL = url;
+
+                database.ref("/users/" + uid + "/photoURL").set(photoURL);
+                img.attr("src", snapshot.val().photoURL);
+
+            }).catch(function (error) {
+                // Handle any errors
+                // console.log("it entered the catch in the promise!");
+                img.attr("src", "assets/images/nature.jpg");
+            });
+
+
+            $("#image-title").text("Hacker " + snapshot.val().displayName);
 
             var userInformationDiv = $("<div>");
-            userInformationDiv.attr("id","contact-info");
+            userInformationDiv.attr("id", "contact-info");
 
-            var img = $("<img>");
+
             var pname = $("<p>");
             var pemail1 = $("<p>");
             var pemail2 = $("<p>");
 
-            img.attr("src",snapshot.val().photoURL);
 
-            pname.text("Welcome "+ snapshot.val().displayName + "!");
+
+            pname.text("Welcome " + snapshot.val().displayName + "!");
             pemail1.text("Email:");
             pemail2.text(snapshot.val().email);
 
-            pictureDiv.append(img);
+            // pictureDiv.append(img);
             userInformationDiv.append(pname).append(pemail1).append(pemail2);
 
-            $("#display-image").append(pictureDiv)
+            // $("#display-image").append(pictureDiv)
+            $(".user-info").empty();
             $(".user-info").append(userInformationDiv);
 
         });
 
     };
 
-    function addDivforChatandThenInitChat(userobject){
+    function addDivforChatandThenInitChat(userobject) {
         var chatDiv = $("<div>");
-        chatDiv.attr("id","firechat-wrapper");
+        chatDiv.attr("id", "firechat-wrapper");
         $("#dislay-chat").append(chatDiv);
 
         // Get a Firebase Database ref
@@ -87,7 +142,7 @@ $(document).ready(function () {
 
         // Set the Firechat user
         chat.setUser(userobject.uid, userobject.displayName);
-      
+
     };
 
 
@@ -98,7 +153,7 @@ $(document).ready(function () {
             // User is signed in.
             storeInDBandDisplay(user);
             addDivforChatandThenInitChat(user);
-
+            // useStrorage(user);
             // ...
         } else {
             // User is signed out.
@@ -107,3 +162,30 @@ $(document).ready(function () {
     });
 
 });
+
+
+
+// function useStrorage(userobject) {
+//     let selectedFile;
+
+//     $("#file-select").on("change", handleFileUploadChange)
+
+//     function handleFileUploadChange(event) {
+//         selectedFile = event.target.files[0];
+//         console.log(selectedFile);
+//         console.log(userobject);
+//     }
+
+//     var displayName = userobject.displayName;
+//     var email = userobject.email;
+//     // var emailVerified = user.emailVerified;
+//     var photoURL = userobject.photoURL;
+//     // var isAnonymous = user.isAnonymous;
+//     var uid = userobject.uid;
+
+//     var emailStorageRef = storage.ref(email);
+
+//     var upload = emailStorageRef.put(selectedFile);
+
+
+// }
