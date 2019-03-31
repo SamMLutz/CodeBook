@@ -56,3 +56,11 @@ main{
         font-family: "Helvetica Neue",sans-serif;
         
       }
+
+      .mdl-button--raised.mdl-button--colored {
+        background: teal;
+      }
+
+      .mdl-button--primary.mdl-button--primary {
+        color: teal;
+      }
