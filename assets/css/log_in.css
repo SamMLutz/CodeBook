@@ -1,3 +1,13 @@
+body{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main{
+    flex: 1 0 auto;
+}
+
+
 .background-banner{
       
         background: url("../images/light-blue-abstract-background.jpg")
@@ -7,9 +17,42 @@
                 -o-background-size: cover;
         background-size: cover;
     }
-    .firebaseui-textfield.mdl-textfield .firebaseui-label::after {
+
+     .firebaseui-textfield.mdl-textfield .firebaseui-label::after {
         background-color: white;
     }
     .mdl-textfield__label:after {
         background-color: white;
     }
+    /* .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        /* background-color: red;
+        color: white; */
+        /* text-align: center;
+     } */ */
+     .footer {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 1rem;
+        /* background-color: #efefef;
+        text-align: center; */
+      }
+      
+      .footer-copyright{
+          text-align: center;
+      }
+
+      #header-id{
+          margin-bottom: 80px;
+      }
+
+      nav .brand-logo {
+        padding-left: 10px;
+        font-family: "Helvetica Neue",sans-serif;
+        
+      }

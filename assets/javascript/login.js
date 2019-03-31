@@ -33,9 +33,10 @@ var uiConfig = {
         
     ],
     // Terms of service url.
-    tosUrl: '<your-tos-url>',
+    //tosUrl: '<your-tos-url>',
+    tosUrl: 'https://firebase.google.com/terms/',
     // Privacy policy url.
-    privacyPolicyUrl: '<your-privacy-policy-url>'
+    privacyPolicyUrl: 'https://firebase.google.com/support/privacy/'
 };
 
 // The start method will wait until the DOM is loaded.
