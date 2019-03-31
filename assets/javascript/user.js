@@ -1,17 +1,5 @@
 $(document).ready(function () {
 
-    $(".signup").on("click", function () {
-        window.location = "sign_in.html";
-        console.log("button clicked: ");
-    });
-
-    $(".login").on("click", function () {
-        window.location = "log_in.html";
-        console.log("button clicked: ");
-    });
-
-
-
     var config = {
         apiKey: "AIzaSyCv8Qv88n2ge3Q8VvqG1ekBjbNDp9jkDLc",
         authDomain: "codebook-6130b.firebaseapp.com",
@@ -24,7 +12,7 @@ $(document).ready(function () {
     var database = firebase.database();
     var storage = firebase.storage();
 
-    var count = 0;
+
 
 
 
@@ -67,7 +55,7 @@ $(document).ready(function () {
 
                     // console.log("yo yoyoyoyoyoyo this is the url"+url);
                     photoURL = url;
-                    count++;
+
                     database.ref("/users/" + uid + "/photoURL").set(photoURL);
                 }).catch(function (error) {
                     // Handle any errors
